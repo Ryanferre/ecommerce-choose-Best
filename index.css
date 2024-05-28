@@ -1,0 +1,312 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 62.5%;
+    background-color: rgb(241, 255, 255);
+    height: 100%;
+}
+.Unit{
+    width: 100%;
+    height: max-content;
+    background-color: rgba(0, 255, 255, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.Tex{
+    background-color: rgba(250, 235, 215, 0);
+    width: 55%;
+    padding-left: 2%;
+}
+.Tex h1{
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-size: clamp(1.3rem, 2.5vmax, 2rem);
+    height: clamp(2vmax, 21.5vmax, 3.8vmax);
+}
+.Tex p{
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-size: clamp(.7rem, 1vmax, 1rem);
+}
+.usur{
+    display: none;
+}
+.Box-Unit{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    transition: .8s;
+}
+.Box-Menu{
+    width: 2.4vmax;
+    height: 2vmax;
+    border: none;
+    border: solid 1px rgb(42, 195, 255);
+    border-radius: 4px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(42, 195, 255);
+    box-shadow: 1px 1px 10px rgb(212, 212, 212);
+}
+.List-Menu{
+    content: '';
+    width: 1.5vw;
+    height: .8px;
+    background-color: white;
+    border: solid 1px rgba(186, 191, 194, 0);
+    border-radius: 20px;
+}
+.Pesquisa{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    width: max-content;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgb(212, 212, 212);
+    transition: .9s;
+}
+.TextProdu{
+    height: 2vmax;
+    width: 13vmax;
+    border: none;
+    outline: none;
+    background-color: rgba(240, 248, 255, 0);
+    text-indent: 10px;
+}
+.Iconlup{
+    width: 1.5vmax;
+    height: 1.5vmax;
+}
+.Busca{
+    width: 3vmax;
+    height: 2.5vmax;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+    background-color: rgb(42, 195, 255);
+    transition: .2s;
+    cursor: pointer;
+}
+.Busca:hover{
+    background-color: rgb(0, 155, 216);
+}
+.Login{
+    width: 22vmax;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15%;
+    background-color: rgba(127, 255, 212, 0);
+    transition: .8s;
+}
+.SignButton, .LoginButton{
+    border: none;
+    border-radius: 8px;
+    font-family: sans-serif;
+    font-size: clamp(.7rem, 1vmax, 1rem);
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(42, 195, 255);
+    width: 7vmax;
+    padding: 3%;
+    transition: .2s;
+}
+.LoginButton:hover{
+    background-color: rgb(0, 155, 216);
+}
+.SignButton:hover{
+    background-color: rgb(0, 155, 216);
+}
+
+h2{
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-size: clamp(1rem, 2vh, 1.3rem);
+    margin-top: 5%;
+    text-indent: 3%;
+}
+.TitleRecent{
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-size: 1.3rem;
+    margin-top: 2%;
+    text-indent: 3%;
+}
+.Products{
+    display: flex;
+    flex-direction: row;
+    padding-left: 5%;
+    gap: 3%;
+    margin-top: 2%;
+}
+
+.ProductImag{
+    width: 100%;
+    height: 14vmax;
+}
+
+.airpods, .Mouse, .Teclado, .Mousepad{
+    width: 19vmax;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(233, 233, 233);
+    gap: .3vmax;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgb(226, 226, 226);
+}
+.UnitDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 20vmax;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.UnitDescription h3{
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-size: clamp(1rem, .5vmax, 1.3rem);
+    height: 2.7vmax;
+    margin-left: 4%;
+}
+.UnitDescription p{
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-size: clamp(.7rem, 1vmax, 1rem);
+    margin-left: 4%;
+}
+
+.UnitPrice{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.UnitPrice p{
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-size: clamp(.7rem, 1vmax, 1rem);
+    margin-left: 4%;
+}
+.UnitPrice h4{
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-size: clamp(1.2rem, 1vmax, 1.4rem);
+    color: rgb(42, 236, 243);
+    margin-left: 4%;
+}
+
+.Categories{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60%;
+    margin-top: 2%;
+}
+.Categories li{
+    list-style: none;
+}
+.sellProduct{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    width: 10vmax;
+    padding: 4%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgb(226, 226, 226);
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+@media (max-width: 590px) {
+    .Login{
+        gap: 3%;
+    }
+    .Unit{
+        height: 10vmax;
+        align-items: normal;
+    }
+    .Box-Menu{
+        display: flex;
+        width: 6vmax;
+        height: 4vmax;
+        z-index: 2;
+        margin-top: 4%;
+        position: relative;
+        left: -3%
+    }
+    .List-Menu{
+        width: 20px;
+    }
+    .Box-Unit{
+        flex-direction: column;
+        width: 45%;
+        height: 260%;
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        top: -300%;
+        left: 7%;
+        z-index: 1;
+        border-radius: 10px;
+        box-shadow: 1px 1px 8px rgb(226, 226, 226);
+    }
+    .Pesquisa, .Login{
+        margin-left: 40%;
+    }
+    .Login{
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        height: 35%;
+    }
+    .SignButton, .LoginButton{
+        width: 12vmax;
+        height: 2vmax;
+        border-radius: 5px;
+    }
+    .airpods, .Mouse, .Teclado, .Mousepad{
+        width: 80%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(233, 233, 233);
+        gap: .3vmax;
+        border-radius: 10px;
+        box-shadow: 1px 1px 8px rgb(226, 226, 226);
+    }
+    .UnitDescription{
+        height: 75%;
+        width: 100%;
+    }
+    .UnitPrice{
+        width: 100%;
+    }
+    .Products{
+        width: max-content;
+        height: 50%;
+    }
+}
