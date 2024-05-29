@@ -242,7 +242,7 @@ h2{
     color: black;
 }
 
-@media (max-width: 590px) {
+@media (max-width: 600px) {
     .Login{
         gap: 3%;
     }
