@@ -231,7 +231,6 @@ h2{
     flex-direction: row;
     justify-content: space-around;
     width: 60%;
-    margin-top: 2%;
 }
 .iconsearch{
     width: 4vmax;
@@ -249,7 +248,7 @@ h2{
     font-size: 1.2rem;
     text-align: center;
     text-decoration: none;
-    width: 10vmax;
+    flex-grow: 1;
     padding: 4%;
     border-radius: 10px;
     box-shadow: 1px 1px 8px rgb(226, 226, 226);
@@ -328,6 +327,6 @@ h2{
         width: 100%;
     }
     .sellProduct{
-        width: 15vmax;
+        width: 14vmax;
     }
 }
