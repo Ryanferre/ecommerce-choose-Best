@@ -308,7 +308,7 @@ h2{
     }
     .UnitPrice{
         width: 100%;
-        height: max-content;
+        height: 100%;
     }
     .Products{
         width: 100%;
