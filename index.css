@@ -290,7 +290,7 @@ h2{
         border-radius: 5px;
     }
     .airpods, .Mouse, .Teclado, .Mousepad{
-        width: 30%;
+        width: 40%;
         height: 100%;
         background-color: rgb(233, 233, 233);
         gap: .3vmax;
