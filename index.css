@@ -233,6 +233,9 @@ h2{
     width: 60%;
     margin-top: 2%;
 }
+.iconsearch{
+    width: 4vmax;
+}
 .Categories li{
     list-style: none;
 }
@@ -319,6 +322,12 @@ h2{
     .Products{
         width: 100%;
         height: max-content;
-        overflow: scroll;
+        overflow: auto;
+    }
+    .Categories{
+        width: 100%;
+    }
+    .sellProduct{
+        width: 15vmax;
     }
 }
