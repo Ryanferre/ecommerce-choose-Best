@@ -260,8 +260,7 @@ h2{
         height: 4vmax;
         z-index: 2;
         margin-top: 4%;
-        position: relative;
-        left: -3vmax;
+        margin-left: -15vmax;
     }
     .List-Menu{
         width: 20px;
