@@ -216,12 +216,11 @@ h2{
     color: rgb(42, 236, 243);
     text-indent: 4%;
 }
-
 .Categories{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 60%;
+    width: 60%
 }
 .iconsearch{
     width: 4vmax;
@@ -262,7 +261,7 @@ h2{
         z-index: 2;
         margin-top: 4%;
         position: relative;
-        left: -3%
+        left: -3vmax;
     }
     .List-Menu{
         width: 20px;
@@ -296,6 +295,7 @@ h2{
     .airpods, .Mouse, .Teclado, .Mousepad{
         width: 48%;
         height: 38vmax;
+        margin-left: 0%;
         background-color: rgb(233, 233, 233);
         gap: .3vmax;
         flex-shrink: 0;
@@ -316,10 +316,12 @@ h2{
         overflow: scroll;
         display: flex;
         align-items: center;
+        padding-left: 2%;
     }
     .Categories{
         width: 100%;
-        align-items: center;
+        justify-content: space-around;
+        align-items: end;
     }
     .sellProduct{
         width: 14vmax;
