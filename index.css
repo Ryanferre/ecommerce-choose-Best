@@ -302,21 +302,6 @@ h2{
         border-radius: 10px;
         box-shadow: 1px 1px 8px rgb(226, 226, 226);
     }
-    .active-pageproducts{
-        display: flex;
-        border: 10px;
-        font-family: sans-serif;
-        font-size: clamp(.9rem, 1vmax, 1rem);
-        color: white;
-        background-color: rgb(0, 155, 216);
-        box-shadow: 1px 1px 8px rgb(226, 226, 226);
-        padding-top: 17vmax;
-        padding-bottom: 17vmax;
-        padding-left: 4vmax;
-        padding-right: 4vmax;
-        text-align: center;
-        transition: .2s;
-    }
     .UnitDescription{
         height: 75%;
         width: 100%;
