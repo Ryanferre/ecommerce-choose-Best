@@ -252,15 +252,16 @@ h2{
     }
     .Unit{
         height: 10vmax;
-        align-items: normal;
+        justify-content: space-around;
     }
     .Box-Menu{
         display: flex;
         width: 6vmax;
         height: 4vmax;
-        z-index: 2;
+        z-index: 1;
         margin-top: 4%;
-        margin-left: -15vmax;
+        position: relative;
+        left: -6%
     }
     .List-Menu{
         width: 20px;
@@ -268,12 +269,12 @@ h2{
     .Box-Unit{
         flex-direction: column;
         width: 45%;
-        height: 260%;
+        height: 30vmax;
         background-color: rgb(255, 255, 255);
+        margin-top: -80%;
         position: relative;
-        top: -300%;
-        left: 7%;
-        z-index: 1;
+        left: 4%;
+        z-index: 0;
         border-radius: 10px;
         box-shadow: 1px 1px 8px rgb(226, 226, 226);
     }
