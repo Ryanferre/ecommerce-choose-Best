@@ -40,26 +40,8 @@ body{
     align-items: center;
     transition: .8s;
 }
-.Box-Menu{
-    width: 2.4vmax;
-    height: 2vmax;
-    border: none;
-    border: solid 1px rgb(42, 195, 255);
-    border-radius: 4px;
+.menu-mobile{
     display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgb(42, 195, 255);
-    box-shadow: 1px 1px 10px rgb(212, 212, 212);
-}
-.List-Menu{
-    content: '';
-    width: 1.5vw;
-    height: .8px;
-    background-color: white;
-    border: solid 1px rgba(186, 191, 194, 0);
-    border-radius: 20px;
 }
 .Pesquisa{
     display: flex;
@@ -247,36 +229,39 @@ h2{
 }
 
 @media (max-width: 600px) {
-    .Login{
-        gap: 3%;
-    }
     .Unit{
         height: 10vmax;
-        justify-content: space-around;
-    }
-    .Box-Menu{
-        display: flex;
-        width: 6vmax;
-        height: 4vmax;
-        z-index: 1;
-        margin-top: 4%;
-        position: relative;
-        left: -6%
+        justify-content: left;
     }
     .List-Menu{
         width: 20px;
     }
     .Box-Unit{
-        flex-direction: column;
-        width: 45%;
-        height: 30vmax;
-        background-color: rgb(255, 255, 255);
-        margin-top: -80%;
-        position: relative;
-        left: 4%;
-        z-index: 0;
-        border-radius: 10px;
-        box-shadow: 1px 1px 8px rgb(226, 226, 226);
+       display: none;
+    }
+    .menu-mobile{
+        display: flex;
+        position: fixed;
+        top: 95%;
+        width: 100%;
+    }
+    .listNav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        list-style: none;
+    }
+    .buttonNav{
+        border: none;
+        background-color: rgba(0, 255, 255, 0);
+        transition: .5s;
+    }
+    .iconNavegation{
+        width: 4vmax;
+    }
+    .iconNavegation:hover{
+        filter: drop-shadow(1px 2px 3px black);
     }
     .Pesquisa, .Login{
         margin-left: 40%;

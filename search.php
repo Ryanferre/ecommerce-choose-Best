@@ -1,5 +1,15 @@
 <?php
 
+function callanswer(){
+    if(isset($_POST['action']) && $_POST['action'] === 'RequisitionConstruct'){
+        RequisitionConstruct();
+    }
+}
+
+
+callanswer();
+
+
 function Construct(){
     $loadRequest= file_get_contents('php://input');
   
@@ -171,5 +181,37 @@ function Construct(){
     }
 }
 
-Construct();
+function RequisitionConstruct(){
+    $searchanswer= $_POST['action'];
+
+    if($searchanswer === 'RequisitionConstruct'){
+        $html = '
+        <!DOCTYPE html>
+        <html lang="pt-br">
+
+        <header>
+        
+        <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Document</title>
+        </header>
+
+        <body>
+        
+        <div class="Pesquisa-mobile">
+                <input class="elementsone-mobile" type="text">
+                <button class="elementestwo-mobile" onclick="sendADD()"><img class="Iconlup" src="icones/LupaPesquisa.png"></button>
+        </div>
+        
+        </body>
+
+        </html>
+        ';
+
+
+        echo $html;
+    }else{
+        echo 'erro';
+    }
+}
 ?>
