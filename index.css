@@ -357,10 +357,11 @@ h2{
         align-items: center;
         background-color: aquamarine;
     }
-    .Categories{
+    .FillProduct{
         margin: 0 auto 0;
         width: 90%;
-        align-items: end;
+        display: flex;
+        align-items: center;
         background-color: aquamarine;
     }
     .Categories li{
