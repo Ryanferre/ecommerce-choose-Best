@@ -31,7 +31,7 @@ function sellProduct(){
             id: 2,
             mark: 'Cherry',
             producte: 'cherry-mouse',
-            description: 'Mouse ergonomico wireless',
+            description: 'Mouse ergonomico',
             txt: 'price',
             price: '$99.00',
             imag: 'imagens/cherry-mouse.png'
@@ -64,9 +64,8 @@ function sellProduct(){
     localStorage.setItem('stoque', JSON.stringify(obj));
 }
 
-function sendADD(){
+function RequesitionDesk(valuequestion){
     let container= localStorage.getItem('stoque');
-    let searchProduct= document.querySelector(".TextProdu").value;
 
     class unitQuestion{
         constructor(question1, question2){
@@ -75,7 +74,7 @@ function sendADD(){
         }
     }
 
-    let reciveAnswer= new unitQuestion(container, searchProduct)
+    let reciveAnswer= new unitQuestion(container, valuequestion)
 
     $.ajax({
         url: 'search.php',
@@ -92,6 +91,35 @@ function sendADD(){
     })
 }
 
+function RequesitionSearch(){
+    $.ajax({
+        url: 'search.php',
+        type: 'POST',
+        data: {action: 'RequisitionConstruct'},
+        success: function (printanswer){
+            $('body').html(printanswer)
+
+            let Body= document.querySelectorAll('body')
+            Body[0].style.height= '26vmax'
+
+        },
+        error: function(status, xhr, error){
+            console.log(error)
+        }
+    })
+}
+
+function RequesitionPhp(){
+    let screenverifiqued= document.querySelector('.menu-mobile')
+
+    let deskinput= document.querySelector('.TextProdu').value
+
+    if(screenverifiqued.style.display === 'flex'){
+        RequesitionDesk(mobilinput);
+    }else{
+        RequesitionDesk(deskinput);
+    }
+}
 
 function ChangeStyle(PhatFile){
     const currentFile= document.querySelector('#currentFile');
@@ -102,19 +130,4 @@ function ChangeStyle(PhatFile){
           newElement.href= PhatFile;
 
    currentFile.parentNode.replaceChild(newElement, currentFile)
-}
-
-
-function RequesitionSearch(){
-    $.ajax({
-        url: 'search.php',
-        type: 'POST',
-        data: {action: 'RequisitionConstruct'},
-        success: function (printanswer){
-            $('body').html(printanswer)
-        },
-        error: function(status, xhr, error){
-            console.log(error)
-        }
-    })
 }

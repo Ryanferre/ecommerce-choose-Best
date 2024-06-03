@@ -135,22 +135,23 @@ h2{
     gap: 3%;
     margin-top: 2%;
     white-space: nowrap;
+    display: flex;
+    justify-content: space-around;
 }
 
 .ProductImag{
-    width: 100%;
-    height: 14vmax;
+    width: 90%;
+    height: 8vmax;
 }
 
 .airpods, .Mouse, .Teclado, .Mousepad{
-    width: 19vmax;
+    width: 25%;
     height: max-content;
     display: inline-flex;
     flex-direction: column;
     background-color: rgb(233, 233, 233);
     gap: .3vmax;
     border-radius: 10px;
-    margin-left: 2%;
     box-shadow: 1px 1px 8px rgb(226, 226, 226);
 }
 .active-pageproducts{
@@ -202,29 +203,31 @@ h2{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 60%
+    width: 100%
 }
 .iconsearch{
-    width: 4vmax;
+    width: 3vmax;
 }
 .Categories li{
     list-style: none;
+    width: 10%;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgb(226, 226, 226);
+    background-color: rgb(255, 255, 255);
+    flex-grow: 0;
 }
 .sellProduct{
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-family: sans-serif;
+    font-size: clamp(1rem, 1vmax, 1rem);
+    text-align: center;
+    text-decoration: none;
+    width: max-content;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
-    font-family: "Noto Sans Symbols", sans-serif;
-    font-family: sans-serif;
-    font-size: 1.2rem;
-    text-align: center;
-    text-decoration: none;
-    flex-grow: 1;
-    padding: 4%;
-    border-radius: 10px;
-    box-shadow: 1px 1px 8px rgb(226, 226, 226);
-    background-color: rgb(255, 255, 255);
     color: black;
 }
 
@@ -238,6 +241,51 @@ h2{
     }
     .Box-Unit{
        display: none;
+    }
+    .Pesquisa-mobile{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 13%;
+        width: 50%;
+        margin: 3% auto  0;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        background-color: white;
+        box-shadow: 1px 1px 10px rgb(212, 212, 212);
+        transition: .9s;
+    }
+    .TextProdu{
+        height: 100%;
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: rgba(5, 133, 245, 0);
+        text-indent: 10px;
+    }
+    .elementestwo-mobile{
+        width: 20%;
+        height: 100%;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-right-radius: 10%;
+        border-bottom-right-radius: 10%;
+        border-top-left-radius: 10%;
+        border-bottom-left-radius: 10%;
+        background-color: rgb(42, 195, 255);
+        transition: .2s;
+        cursor: pointer;
+    }
+    .elementstwo-mobile:hover{
+        background-color: rgb(0, 155, 216);
+    }
+    .Iconlup-search{
+        width: 10px;
     }
     .menu-mobile{
         display: flex;
@@ -278,7 +326,7 @@ h2{
         border-radius: 5px;
     }
     .airpods, .Mouse, .Teclado, .Mousepad{
-        width: 48%;
+        width: 40%;
         height: 38vmax;
         margin-left: 0%;
         background-color: rgb(233, 233, 233);
@@ -307,6 +355,9 @@ h2{
         width: 100%;
         justify-content: space-around;
         align-items: end;
+    }
+    .Categories li{
+        width:28%;
     }
     .sellProduct{
         width: 14vmax;

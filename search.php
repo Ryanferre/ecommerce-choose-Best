@@ -3,6 +3,8 @@
 function callanswer(){
     if(isset($_POST['action']) && $_POST['action'] === 'RequisitionConstruct'){
         RequisitionConstruct();
+    }else{
+        Construct();
     }
 }
 
@@ -29,7 +31,7 @@ function Construct(){
     $Fon= ['Fone', 'fone', 'airpods'];
     $Mous= ['mouse', 'Mouse'];
     $Tec= ['teclado', 'Teclado', 'teclados'];
-    $RestValue;
+    $RestValue= null;
     if(in_array($loadInput, $Fon)){
         $RestValue = 'indexObject1';
     }else  if(in_array($loadInput, $Mous)){
@@ -199,10 +201,18 @@ function RequisitionConstruct(){
         <body>
         
         <div class="Pesquisa-mobile">
-                <input class="elementsone-mobile" type="text">
-                <button class="elementestwo-mobile" onclick="sendADD()"><img class="Iconlup" src="icones/LupaPesquisa.png"></button>
+                <input class="TextProdu" type="text">
+                <button class="elementestwo-mobile" onclick="RequesitionPhp()"><img class="Iconlup" src="icones/LupaPesquisa.png"></button>
         </div>
         
+        <div class="menu-mobile">
+        <ul class="listNav">
+            <li><button class="buttonNav"><img class="iconNavegation" src="/icones/botao-home.png"></button></li>
+            <li><button class="buttonNav" onclick="RequesitionSearch()"><img class="iconNavegation" src="/icones/LupaPesquisa.png"></button></li>
+            <li><button class="buttonNav"><img class="iconNavegation" src="/icones/contorno-do-botao-de-seta-quadrado-de-login.png"></li>
+            <li><button class="buttonNav"><img class="iconNavegation" src="/icones/icons8-sign-up-50.png"></button></li>
+        </ul>
+    </div>
         </body>
 
         </html>
