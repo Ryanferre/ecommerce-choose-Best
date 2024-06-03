@@ -357,9 +357,11 @@ h2{
     }
     .Categories li{
         width:28%;
+        background-color: blanchedalmond;
     }
     .sellProduct{
         width: 14vmax;
         border-radius: 7px;
+        background-color: brown;
     }
 }
