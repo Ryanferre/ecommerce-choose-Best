@@ -231,7 +231,11 @@ h2{
     align-items: center;
     color: black;
 }
-
+.FillProduct{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @media (max-width: 600px) {
     .Unit{
         height: 10vmax;
@@ -358,9 +362,6 @@ h2{
         width: 100%;
         background-color: black;
         margin: 0 auto 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     .Categories li{
         width:28%;
