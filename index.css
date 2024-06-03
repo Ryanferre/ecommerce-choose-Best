@@ -348,12 +348,12 @@ h2{
         display: flex;
         justify-content: left;
         align-items: center;
-        padding: 10%;
     }
     .Categories{
         width: 100%;
         justify-content: space-around;
         align-items: end;
+        background-color: aquamarine;
     }
     .Categories li{
         width:28%;
