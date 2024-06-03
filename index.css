@@ -355,6 +355,9 @@ h2{
         align-items: end;
         background-color: aquamarine;
     }
+    .FillProduct{
+        width: 100%;
+    }
     .Categories li{
         width:28%;
         background-color: blanchedalmond;
