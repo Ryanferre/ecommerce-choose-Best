@@ -328,7 +328,6 @@ h2{
     .airpods, .Mouse, .Teclado, .Mousepad{
         width: 45%;
         height: max-content;
-        margin-left: 0%;
         gap: .3vmax;
         flex-shrink: 0;
         border-radius: 10px;
@@ -347,8 +346,9 @@ h2{
         height: 40vmax;
         overflow: scroll;
         display: flex;
-        justify-content: end;
+        justify-content: left;
         align-items: center;
+        padding-right: 0;
     }
     .Categories{
         width: 100%;
