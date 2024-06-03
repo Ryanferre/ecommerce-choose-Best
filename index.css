@@ -350,13 +350,12 @@ h2{
         align-items: center;
     }
     .Categories{
-        width: 100%;
-        justify-content: space-around;
         align-items: end;
         background-color: aquamarine;
     }
     .FillProduct{
         width: 100%;
+        margin: 0 auto 0;
     }
     .Categories li{
         width:28%;
