@@ -347,12 +347,13 @@ h2{
         height: 30%;
     }
     .Products{
-        width: 90%;
+        width: 80%;
         height: 40vmax;
         overflow: auto;
         display: flex;
         justify-content: left;
         align-items: center;
+        background-color: aquamarine;
     }
     .Categories{
         margin: 0 auto 0;
