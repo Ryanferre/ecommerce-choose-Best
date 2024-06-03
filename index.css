@@ -347,7 +347,7 @@ h2{
         height: 30%;
     }
     .Products{
-        width: 100%;
+        width: 90%;
         height: 40vmax;
         overflow: auto;
         display: flex;
