@@ -226,8 +226,8 @@ h2{
     text-align: center;
     text-decoration: none;
     width: max-content;
+    gap: 8%;
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
     align-items: center;
     color: black;
@@ -365,11 +365,11 @@ h2{
         background-color: aquamarine;
     }
     .Categories li{
-        width:28%;
+        width: max-content;
         background-color: blanchedalmond;
     }
     .sellProduct{
-        width: 14vmax;
+        width: 12vmax;
         border-radius: 7px;
         background-color: brown;
     }
