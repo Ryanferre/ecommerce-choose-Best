@@ -347,6 +347,7 @@ h2{
         height: 30%;
     }
     .Products{
+        margin: 0 auto 0;
         width: 100%;
         height: 40vmax;
         overflow: auto;
@@ -361,7 +362,6 @@ h2{
     .FillProduct{
         width: 100%;
         background-color: black;
-        margin: 0 auto 0;
     }
     .Categories li{
         width:28%;
