@@ -347,7 +347,8 @@ h2{
         height: 30%;
     }
     .Products{
-        width: 80%;
+        margin: 0 auto 0;
+        width: 95%;
         height: 40vmax;
         overflow: auto;
         display: flex;
@@ -357,7 +358,7 @@ h2{
     }
     .Categories{
         margin: 0 auto 0;
-        width: 95%;
+        width: 100%;
         align-items: end;
         background-color: aquamarine;
     }
