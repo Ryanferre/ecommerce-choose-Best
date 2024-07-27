@@ -2,8 +2,10 @@
 
 function callanswer(){
     if(isset($_POST['action']) && $_POST['action'] === 'RequisitionConstruct'){
+        //requisição para construir uma pagina de pesquisa para mobile
         RequisitionConstruct();
     }else{
+        //requisição para construir a pagina de pesquisa
         Construct();
     }
 }
@@ -11,7 +13,7 @@ function callanswer(){
 
 callanswer();
 
-
+//construção da pagina de produtos
 function Construct(){
     $loadRequest= file_get_contents('php://input');
   
@@ -183,6 +185,7 @@ function Construct(){
     }
 }
 
+//construir a página de pesquisa para mobile
 function RequisitionConstruct(){
     $searchanswer= $_POST['action'];
 
@@ -202,15 +205,15 @@ function RequisitionConstruct(){
         
         <div class="Pesquisa-mobile">
                 <input class="TextProdu" type="text">
-                <button class="elementestwo-mobile" onclick="RequesitionPhp()"><img class="Iconlup" src="icones/LupaPesquisa.png"></button>
+                <button class="elementestwo-mobile"><img class="Iconlup" src="icones/LupaPesquisa.png"></button>
         </div>
         
         <div class="menu-mobile">
         <ul class="listNav">
-            <li><button class="buttonNav"><img class="iconNavegation" src="/icones/botao-home.png"></button></li>
-            <li><button class="buttonNav" onclick="RequesitionSearch()"><img class="iconNavegation" src="/icones/LupaPesquisa.png"></button></li>
-            <li><button class="buttonNav"><img class="iconNavegation" src="/icones/contorno-do-botao-de-seta-quadrado-de-login.png"></li>
-            <li><button class="buttonNav"><img class="iconNavegation" src="/icones/icons8-sign-up-50.png"></button></li>
+            <li><button class="buttonHome"><img class="iconNavegation" src="icones/botao-home.png"></button></li>
+            <li><button class="buttonLupa"><img class="iconNavegation" src="icones/LupaPesquisa.png"></button></li>
+            <li><button class="buttonLogin"><img class="iconNavegation" src="icones/contorno-do-botao-de-seta-quadrado-de-login.png"></li>
+            <li><button class="buttonRegister"><img class="iconNavegation" src="icones/icons8-sign-up-50.png"></button></li>
         </ul>
     </div>
         </body>
@@ -221,7 +224,7 @@ function RequisitionConstruct(){
 
         echo $html;
     }else{
-        echo 'erro';
+        echo 'error de aplicação';
     }
 }
 ?>
