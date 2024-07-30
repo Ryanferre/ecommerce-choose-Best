@@ -1,3 +1,5 @@
+import * as FileVerifiqued from './validForm'
+
 function sellProduct(){
     const obj= [
         [
@@ -134,6 +136,7 @@ function askPageform(){
             $('body').html(answer);
             ChangeStyle('form.css');
             RepleceJs('Processmanipulator.js')
+            FileVerifiqued.init()
         },
         error: function (status, xhr, error){
             console.log(error);
