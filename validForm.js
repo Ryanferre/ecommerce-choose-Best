@@ -1,55 +1,82 @@
 import {ToFillIn} from './Processmanipulator.js'
 
 let Form= document.querySelector('.Register')
-let Rf= document.querySelectorAll('input')
-for(let i = 0; i < Rf.length; i++){
-    Rf[i].addEventListener('click', (event)=>{
-        let ft= event.target
-        structPhase(ft.className)
-    })
-}
 
 Form.addEventListener("submit", function (event){
     event.preventDefault()
-    let InputList= document.querySelectorAll('input')
+    let InputList= document.querySelectorAll('input').values
     const TextAlert= document.querySelector('.Atetion')
-        ToFillIn(InputList, TextAlert)
+    let Name;
+    let Dado= [/\w\@gmail.com/, /\d{8}/, /\d{8}/];
+
+    for(let i = 0; i < InputList.length, i < Dado.length; i++){
+        if(InputList[i] !== Dado[i]){
+            console.log(InputList[i])
+        }else{
+            console.log('correto')
+        }
+    }
 })
 
 
-let Space= []
-function structPhase(Phase){
-    const viewPhase = ['Email_invalido!', 'Senha_muito_curta!', 'Repita_a_senha_com_os_mesmos_caractere'];
 
-    console.log(Phase)
+
+
+
+
+function structPhase(Phase){
+    //Frases para cada error
+    const viewPhase = ['Email_invalido!', 'Senha_invalida!', 'Senha_muito_curta!', 'Caractere_diferente._Repita_novamente!', 'Campos imvalidos!'];
+
+    //caso o 'Phase' for um desses valores, chame a função 'Distributor' passando para
+    //ela a sua perspectiva frase
+    let Date;
     switch (Phase) {
-        case 'dt':
-            const Date= viewPhase[1].split('')
-            for(let i=0; i < Date.length; i++){
-                setTimeout(()=>{
-                    if(Date[i] == '_'){
-                        writeInform(`<p class="SpacePhase${i}">${Date[i]}</p>`)
-                        Space.push(document.querySelector(`.SpacePhase${i}`))
-                    }else{
-                        writeInform(`<p class="Informe">${Date[i]}</p>`)
-                    }
-                }, i * 100)
-            }
+        case 'email':
+            Date= viewPhase[0].split('')
+            Distributor(Date)
             break;
     
+        case 'senha':
+            Date= viewPhase[1].split('')
+            Distributor(Date)
+            break;
+        
+        case 'senhaCreate':
+            Date= viewPhase[2].split('')
+            Distributor(Date)
+            break;
+
+        case 'senhaRepeate':
+            Date= viewPhase[3].split('')
+            Distributor(Date)
+            break;
         default:
             break;
     }
 }
 
+
+function Distributor(dados){
+    for(let i=0; i < dados.length; i++){
+        setTimeout(()=>{
+            if(dados[i] == '_'){
+                writeInform(`<p class="SpacePhase">${dados[i]}</p>`)
+            }else{
+                writeInform(`<p class="Informe">${dados[i]}</p>`)
+            }
+        }, i * 100)
+    }
+}
 let arr= []
 
 function writeInform(dado){
     const InformeError= document.querySelector('.Information');
     arr.push(dado)
     InformeError.innerHTML= arr.join('')
-    for(let i =0; i < Space.length; i++){
-        console.log(Space.style)
+    let D= document.querySelectorAll('.SpacePhase')
+    for(let i=0; i < D.length; i++){
+        D[i].style.visibility= 'hidden'
     }
 
 }
