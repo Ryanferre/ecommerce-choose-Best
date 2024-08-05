@@ -16,6 +16,8 @@ Form.addEventListener("submit", function (event){
         ToFillIn(InputList, TextAlert)
 })
 
+
+let Space= []
 function structPhase(Phase){
     const viewPhase = ['Email_invalido!', 'Senha_muito_curta!', 'Repita_a_senha_com_os_mesmos_caractere'];
 
@@ -26,7 +28,8 @@ function structPhase(Phase){
             for(let i=0; i < Date.length; i++){
                 setTimeout(()=>{
                     if(Date[i] == '_'){
-                        writeInform(`<p class="SpacePhase">${Date[i]}</p>`)
+                        writeInform(`<p class="SpacePhase${i}">${Date[i]}</p>`)
+                        Space.push(document.querySelector(`.SpacePhase${i}`))
                     }else{
                         writeInform(`<p class="Informe">${Date[i]}</p>`)
                     }
@@ -41,11 +44,12 @@ function structPhase(Phase){
 
 let arr= []
 
-
 function writeInform(dado){
     const InformeError= document.querySelector('.Information');
     arr.push(dado)
     InformeError.innerHTML= arr.join('')
-    const D= document.querySelector('.SpacePhase')
-    D.style.visibility = 'hidden'
+    for(let i =0; i < Space.length; i++){
+        console.log(Space.style)
+    }
+
 }
