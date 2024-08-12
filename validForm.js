@@ -4,14 +4,14 @@ let Form= document.querySelector('.Register')
 
 Form.addEventListener("submit", function (event){
     event.preventDefault()
-    let InputList= document.querySelectorAll('input').values
+    let InputList= document.querySelectorAll('input')
     const TextAlert= document.querySelector('.Atetion')
     let Name;
     let Dado= [/\w\@gmail.com/, /\d{8}/, /\d{8}/];
 
-    for(let i = 0; i < InputList.length, i < Dado.length; i++){
-        if(InputList[i] !== Dado[i]){
-            console.log(InputList[i])
+    for(let i = 0; i < InputList.length && i < Dado.length; i++){
+        if(InputList[i].values !== Dado[i]){
+            console.log('erro')
         }else{
             console.log('correto')
         }
