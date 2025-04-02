@@ -58,95 +58,87 @@ function Construct(){
     
     switch($RestValue){
         case 'indexObject1':
-            for($k = 0;$k < count($loaddados[0]); $k++){
-                $object = $loaddados[0][$k];
-        
-                        // Verificar se todas as chaves necessárias existem no objeto
-                        $id = $object['id'] ?? 'ID não disponível';
-                        $mark = $object['mark'] ?? 'Marca não disponível';
-                        $product = $object['producte'] ?? 'Produto não disponível';
-                        $description = $object['description'] ?? 'Descrição não disponível';
-                        $txt = $object['txt'] ?? 'Texto não disponível';
-                        $price = $object['price'] ?? 'Preço não disponível';
-                        $imag = $object['imag'] ?? 'Imagem não disponível';
-        
-                        // Montar o HTML
-                        $html = '
-                        <!DOCTYPE html>
-                        <html lang="en">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                            <title>Document</title>
-                        </head>
-                        <body>
-                        <ul>
-                            <li class="items">
-                                <div class="UnitDescription">
-                                    <p class"mark">' . htmlspecialchars($mark, ENT_QUOTES, 'UTF-8') . '</p>
-                                    <img class="ProductImag" src="' . htmlspecialchars($imag, ENT_QUOTES, 'UTF-8') . '">
-                                    <h3>' . htmlspecialchars($product, ENT_QUOTES, 'UTF-8') . '</h3>
-                                    <p>' . htmlspecialchars($description, ENT_QUOTES, 'UTF-8') . '</p>
-                                </div>
-                                <div class="UnitPrice">
-                                    <p>' . htmlspecialchars($txt, ENT_QUOTES, 'UTF-8') . '</p>
-                                    <h4>' . htmlspecialchars($price, ENT_QUOTES, 'UTF-8') . '</h4>
-                                </div>
-                                </li>
-                        </ul>
-                        </body>
-                        </html>';
-        
-                        // Exibir o HTML
-                        echo $html;
-            }
+            echo <<<EOT
+             <body>
+             <ul>
+             EOT;
+                for($k = 0;$k < count($loaddados[0]); $k++){
+                    $object = $loaddados[0][$k];
+            
+                            // Verificar se todas as chaves necessárias existem no objeto
+                            $id = $object['id'] ?? 'ID não disponível';
+                            $mark = $object['mark'] ?? 'Marca não disponível';
+                            $product = $object['producte'] ?? 'Produto não disponível';
+                            $description = $object['description'] ?? 'Descrição não disponível';
+                            $txt = $object['txt'] ?? 'Texto não disponível';
+                            $price = $object['price'] ?? 'Preço não disponível';
+                            $imag = $object['imag'] ?? 'Imagem não disponível';
+            
+                            // Monta o HTML dos itens
+                            $html = '
+                                <li class="items">
+                                    <div class="UnitDescription">
+                                        <p class"mark">' . htmlspecialchars($mark, ENT_QUOTES, 'UTF-8') . '</p>
+                                        <img class="ProductImag" src="' . htmlspecialchars($imag, ENT_QUOTES, 'UTF-8') . '">
+                                        <h3>' . htmlspecialchars($product, ENT_QUOTES, 'UTF-8') . '</h3>
+                                        <p>' . htmlspecialchars($description, ENT_QUOTES, 'UTF-8') . '</p>
+                                    </div>
+                                    <div class="UnitPrice">
+                                        <p>' . htmlspecialchars($txt, ENT_QUOTES, 'UTF-8') . '</p>
+                                        <h4>' . htmlspecialchars($price, ENT_QUOTES, 'UTF-8') . '</h4>
+                                    </div>
+                                    </li>';
+                          echo $html;
+                }
+             echo <<<EOT
+               </ul>
+               </body>
+               EOT;
         break; 
         
         case 'indexObject2':
-            for($k = 0;$k < count($loaddados[1]); $k++){
-                $object = $loaddados[1][$k];
-        
-                        // Verificar se todas as chaves necessárias existem no objeto
-                        $id = $object['id'] ?? 'ID não disponível';
-                        $mark = $object['mark'] ?? 'Marca não disponível';
-                        $product = $object['producte'] ?? 'Produto não disponível';
-                        $description = $object['description'] ?? 'Descrição não disponível';
-                        $txt = $object['txt'] ?? 'Texto não disponível';
-                        $price = $object['price'] ?? 'Preço não disponível';
-                        $imag = $object['imag'] ?? 'Imagem não disponível';
-        
-                        // Montar o HTML
-                        $html = '
-                        <!DOCTYPE html>
-                        <html lang="en">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                            <title>Document</title>
-                        </head>
-                        <body>
-                        <ul>
-                            <li class="items">
-                                <div class="UnitDescription">
-                                    <p class="mark">' . htmlspecialchars($mark, ENT_QUOTES, 'UTF-8') . '</p>
-                                    <img class="ProductImag" src="' . htmlspecialchars($imag, ENT_QUOTES, 'UTF-8') . '">
-                                    <h3>' . htmlspecialchars($product, ENT_QUOTES, 'UTF-8') . '</h3>
-                                    <p>' . htmlspecialchars($description, ENT_QUOTES, 'UTF-8') . '</p>
-                                </div>
-                                <div class="UnitPrice">
-                                    <p>' . htmlspecialchars($txt, ENT_QUOTES, 'UTF-8') . '</p>
-                                    <h4>' . htmlspecialchars($price, ENT_QUOTES, 'UTF-8') . '</h4>
-                                </diV>
-                                </li>
-                        </ul>
-                        </body>
-                        </html>';
-        
-                        // Exibir o HTML
-                        echo $html;
-            }
+            echo <<<EOT
+             <body>
+             <ul>
+             EOT;
+                for($k = 0;$k < count($loaddados[1]); $k++){
+                    $object = $loaddados[1][$k];
+            
+                            // Verificar se todas as chaves necessárias existem no objeto
+                            $id = $object['id'] ?? 'ID não disponível';
+                            $mark = $object['mark'] ?? 'Marca não disponível';
+                            $product = $object['producte'] ?? 'Produto não disponível';
+                            $description = $object['description'] ?? 'Descrição não disponível';
+                            $txt = $object['txt'] ?? 'Texto não disponível';
+                            $price = $object['price'] ?? 'Preço não disponível';
+                            $imag = $object['imag'] ?? 'Imagem não disponível';
+            
+                            // Monta o HTML dos itens
+                            $html = '
+                                <li class="items">
+                                    <div class="UnitDescription">
+                                        <p class"mark">' . htmlspecialchars($mark, ENT_QUOTES, 'UTF-8') . '</p>
+                                        <img class="ProductImag" src="' . htmlspecialchars($imag, ENT_QUOTES, 'UTF-8') . '">
+                                        <h3>' . htmlspecialchars($product, ENT_QUOTES, 'UTF-8') . '</h3>
+                                        <p>' . htmlspecialchars($description, ENT_QUOTES, 'UTF-8') . '</p>
+                                    </div>
+                                    <div class="UnitPrice">
+                                        <p>' . htmlspecialchars($txt, ENT_QUOTES, 'UTF-8') . '</p>
+                                        <h4>' . htmlspecialchars($price, ENT_QUOTES, 'UTF-8') . '</h4>
+                                    </div>
+                                    </li>';
+                          echo $html;
+                }
+             echo <<<EOT
+               </ul>
+               </body>
+               EOT;
             break;
             case 'indexObject3':
+                echo <<<EOT
+             <body>
+             <ul>
+             EOT;
                 for($k = 0;$k < count($loaddados[2]); $k++){
                     $object = $loaddados[2][$k];
             
@@ -159,20 +151,11 @@ function Construct(){
                             $price = $object['price'] ?? 'Preço não disponível';
                             $imag = $object['imag'] ?? 'Imagem não disponível';
             
-                            // Montar o HTML
+                            // Monta o HTML dos itens
                             $html = '
-                            <!DOCTYPE html>
-                            <html lang="en">
-                            <head>
-                                <meta charset="UTF-8">
-                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                                <title>Document</title>
-                            </head>
-                            <body>
-                            <ul>
                                 <li class="items">
                                     <div class="UnitDescription">
-                                        <p>' . htmlspecialchars($mark, ENT_QUOTES, 'UTF-8') . '</p>
+                                        <p class"mark">' . htmlspecialchars($mark, ENT_QUOTES, 'UTF-8') . '</p>
                                         <img class="ProductImag" src="' . htmlspecialchars($imag, ENT_QUOTES, 'UTF-8') . '">
                                         <h3>' . htmlspecialchars($product, ENT_QUOTES, 'UTF-8') . '</h3>
                                         <p>' . htmlspecialchars($description, ENT_QUOTES, 'UTF-8') . '</p>
@@ -181,14 +164,13 @@ function Construct(){
                                         <p>' . htmlspecialchars($txt, ENT_QUOTES, 'UTF-8') . '</p>
                                         <h4>' . htmlspecialchars($price, ENT_QUOTES, 'UTF-8') . '</h4>
                                     </div>
-                                    </li>
-                            </ul>
-                            </body>
-                            </html>';
-            
-                            // Exibir o HTML
-                            echo $html;
+                                    </li>';
+                          echo $html;
                 }
+             echo <<<EOT
+               </ul>
+               </body>
+               EOT;
                 break;
                 default:
                 echo "$RestValue. Nos desculpe  não coseguimos encontrar o produto!";
@@ -202,16 +184,6 @@ function RequisitionConstruct(){
 
     if($searchanswer === 'RequisitionConstruct'){
         $html = '
-        <!DOCTYPE html>
-        <html lang="pt-br">
-
-        <header>
-        
-        <meta charset="UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <title>Document</title>
-        </header>
-
         <body>
         
         <div class="Pesquisa-mobile">
@@ -226,11 +198,8 @@ function RequisitionConstruct(){
             <li><button class="buttonLogin"><img class="iconNavegation" src="icones/contorno-do-botao-de-seta-quadrado-de-login.png"></li>
             <li><button class="buttonRegister"><img class="iconNavegation" src="icones/icons8-sign-up-50.png"></button></li>
         </ul>
-    </div>
-        </body>
-
-        </html>
-        ';
+        </div>
+        </body>';
 
 
         echo $html;

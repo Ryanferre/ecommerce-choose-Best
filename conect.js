@@ -1,5 +1,6 @@
 
 function sellProduct(){
+    //cada array de objetos representa uma categoria
     const obj= [
         [
             {
@@ -10,6 +11,15 @@ function sellProduct(){
                 txt: 'price',
                 price: '$519.99',
                 imag: 'imagens/Airpods pro 2.webp'
+            },
+            {
+                id: 2,
+                mark: 'Apple',
+                producte: 'Airpods pro 4',
+                description: 'wireless headphones',
+                txt: 'price',
+                price: '$640.99',
+                imag: 'imagens/airpodsPro4.webp'
             }
         ],
        [

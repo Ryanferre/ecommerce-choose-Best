@@ -30,15 +30,6 @@ verifiquedmethod();
 
 function constructFor(){
     $html='
-    <!DOCTYPE html>
-        <html lang="pt-br">
-
-        <header>
-        
-        <meta charset="UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <title>Document</title>
-        </header>
 <body>
  <script src="./Manipulation.js"></script>
     <div class="container">
@@ -66,8 +57,7 @@ function constructFor(){
             </button>
         </div>
     </div>
-</body>
-</html>';
+</body>';
     echo $html;
 
 }
