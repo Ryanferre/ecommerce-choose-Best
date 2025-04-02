@@ -129,13 +129,12 @@ function askPageForMobile(){
 //função para fazer uma requisição de uma pagina de cadastro
 function askPageform(){
     $.ajax({
-        url: 'Form.php',
+        url: 'form.php',
         type: 'POST',
         data: {action: 'Module-body-form'},
         success: function(answer){
             $('body').html(answer);
             ChangeStyle('form.css');
-            RepleceJs('Processmanipulator.js')
             FileVerifiqued.init()
         },
         error: function (status, xhr, error){
