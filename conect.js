@@ -1,4 +1,3 @@
-import * as FileVerifiqued from './validForm'
 
 function sellProduct(){
     const obj= [
@@ -51,6 +50,7 @@ function sellProduct(){
     localStorage.setItem('stoque', JSON.stringify(obj));
 }
 
+/*Requisicao para pesquisa de produto */
 function RequesitionProduct(){
     let container= localStorage.getItem('stoque');
 
@@ -66,7 +66,7 @@ function RequesitionProduct(){
     let reciveAnswer= new unitQuestion(container, valuedata)
 
     $.ajax({
-        url: 'search.php',
+        url: 'http://localhost/search.php',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(reciveAnswer),
@@ -93,7 +93,6 @@ function ChangeStyle(PhatFile){
 }
 
 //mudar o arquivo js
-
 function RepleceJs(getFile){
     const Filejs= document.querySelector('#JsFile')
 
@@ -110,7 +109,7 @@ ela é chamada atravez do botão apresentado no menu-mobile(botão de pesquisa) 
 function askPageForMobile(){
     let Body;
     $.ajax({
-        url: 'search.php',
+        url: 'http://localhost/formsearch.php',
         type: 'POST',
         data: {action: 'RequisitionConstruct'},
         success: function (printanswer){
@@ -129,7 +128,7 @@ function askPageForMobile(){
 //função para fazer uma requisição de uma pagina de cadastro
 function askPageform(){
     $.ajax({
-        url: 'form.php',
+        url: 'http://localhost/form.php',
         type: 'POST',
         data: {action: 'Module-body-form'},
         success: function(answer){
@@ -142,5 +141,4 @@ function askPageform(){
         }
     })
 }
-
 export {sellProduct, RequesitionProduct, askPageform, askPageForMobile}

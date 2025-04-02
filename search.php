@@ -1,11 +1,21 @@
 <?php
 
+header("Access-Control-Allow-Origin: *"); // Permite requisições de qualquer origem
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS"); // Permite os métodos HTTP necessários
+header("Access-Control-Allow-Headers: Content-Type"); // Permite o cabeçalho Content-Type
+
+// Se for uma requisição OPTIONS (preflight), finaliza sem retornar conteúdo
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(204);
+    exit;
+}
+
 function callanswer(){
     if(isset($_POST['action']) && $_POST['action'] === 'RequisitionConstruct'){
         //requisição para construir uma pagina de pesquisa para mobile
         RequisitionConstruct();
     }else{
-        //requisição para construir a pagina de pesquisa
+        //requisição para construir a pagina de pesquisa em desqtop imdependente do tipo de variavel que esteja recebendo
         Construct();
     }
 }
@@ -34,6 +44,7 @@ function Construct(){
     $Mous= ['mouse', 'Mouse'];
     $Tec= ['teclado', 'Teclado', 'teclados'];
     $RestValue= null;
+    
     if(in_array($loadInput, $Fon)){
         $RestValue = 'indexObject1';
     }else  if(in_array($loadInput, $Mous)){

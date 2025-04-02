@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols:wght@100..900&display=swap" rel="stylesheet">
 </head>
-<body onload="sellProduct()">
+<body>
     <div class="Unit">
         <div class="Tex">
             <h1>choose Best</h1>
@@ -19,7 +19,7 @@
        <div class="Box-Unit">
             <div class="Pesquisa">
                 <input class="TextProdu" type="text">
-                <button class="Busca" onclick="RequesitionPhp()"><img class="Iconlup" src="icones/LupaPesquisa.png"></button>
+                <button class="Busca"><img class="Iconlup" src="icones/LupaPesquisa.png"></button>
             </div>
             <nav class="Login">
                 <a href="#" class="SignButton">Sign up</a>
@@ -31,7 +31,7 @@
     <div class="menu-mobile">
         <ul class="listNav">
             <li><button class="buttonNav"><img class="iconNavegation" src="icones/botao-home.png"></button></li>
-            <li><button class="buttonNav" onclick="RequesitionSearch()"><img class="iconNavegation" src="icones/LupaPesquisa.png"></button></li>
+            <li><button class="buttonNav"><img class="iconNavegation" src="icones/LupaPesquisa.png"></button></li>
             <li><button class="buttonNav"><img class="iconNavegation" src="icones/contorno-do-botao-de-seta-quadrado-de-login.png"></li>
             <li><button class="buttonNav"><img class="iconNavegation" src="icones/icons8-sign-up-50.png"></button></li>
         </ul>
@@ -103,6 +103,6 @@
     <div class="recently">
 
     </div>
-    <script src="index.js"></script>
+    <script type="module" src="./index.js"></script>
 </body>
 </html>
