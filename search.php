@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *"); // Permite requisições de qualquer o
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS"); // Permite os métodos HTTP necessários
 header("Access-Control-Allow-Headers: Content-Type"); // Permite o cabeçalho Content-Type
 
-// Se for uma requisição OPTIONS (preflight), finaliza sem retornar conteúdo
+// Se for uma requisição OPTIONS, finaliza sem retornar conteúdo
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(204);
     exit;
@@ -15,7 +15,7 @@ function callanswer(){
         //requisição para construir uma pagina de pesquisa para mobile
         RequisitionConstruct();
     }else{
-        //requisição para construir a pagina de pesquisa em desqtop imdependente do tipo de variavel que esteja recebendo
+        //requisição para construir a pagina de pesquisa em desqtop imdependente do tipo de conteudo na requisição que esteja recebendo
         Construct();
     }
 }

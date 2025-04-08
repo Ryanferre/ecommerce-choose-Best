@@ -5,6 +5,7 @@ FileRequisition.sellProduct()
 let btnRequestsearch= document.querySelector('.Busca');
 const btnSearchMobile= document.querySelector('.buttonLupa');
 const btnRegisterMobile= document.querySelector('.buttonRegister');
+const boxLoginAndSingUp= document.querySelector('.Login')
 const BtnForForm= [document.querySelector('.SignButton'), document.querySelector('.LoginButton')]
 
 
@@ -54,3 +55,19 @@ if (BtnForForm.length > 0) {
 BtnForForm[0].addEventListener('click', (evt)=>{
     FileRequisition.askPageform()
 })
+
+//fução de resposta ao usuario cadastrado e retirada dos botaoes na pagina principal
+function solving(){
+    //verificação periodica se foi feito login
+    const checkLogin = setInterval(() => {
+        let Mess = localStorage.getItem('menssagem');
+        console.log(Mess);
+        
+        if (Mess === 'enviado com sucesso') {
+            boxLoginAndSingUp.style.display = 'none';
+            clearInterval(checkLogin);
+        }
+    }, 100);
+}
+
+solving()

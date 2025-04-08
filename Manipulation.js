@@ -12,7 +12,7 @@ function Movment(){
         BoxSearch.style.marginLeft= ''
     }
 }
-
+console.log('arquivo carregado')
 //troca de forma de cadastro
 function manipulationCadres() {
     const boxcontainer = document.querySelector('.Register');
@@ -64,35 +64,27 @@ function timeExecut(Element) {
 
 //modificar os elementos da caixa de cadastro
 function ReplacementToElement(){
-   let ElementForm= document.querySelectorAll('label');
-   let cont= [];
+   let ElementForm= document.querySelector('.form');
+   let ElementLogin= document.querySelector('.LoginIn');
+   let btnRegister= [document.querySelector('.button-answerOne'), document.querySelector('.button-answerTwo')]
 
-   if(ElementForm[0].style.display !== 'none'){
+   if(ElementForm.style.display != 'none'){
         setTimeout(()=>{
-            for(let i=0; i < ElementForm.length; i++){
-                if(ElementForm[i]!== ElementForm[2] && ElementForm[i]!== ElementForm[3]){
-                    ElementForm[i].style.display = 'none'
-                    cont.push(ElementForm[i])
-                }else{
-                    ElementForm[i].style.display= 'flex'
-                }
-            }
-        adaptContainer(cont)
-        changePhrase(cont[0])
-        console.log(cont)
+        ElementForm.style.display= 'none'
+        ElementLogin.style.display= 'flex'
+        btnRegister[0].style.display= 'none'
+        btnRegister[1].style.display= 'flex'
+        changePhrase('none')
         }, 1000)
    }else{
-
         setTimeout(()=>{
-            for(let i=0; i < ElementForm.length; i++){
-                ElementForm[i].style.display = ''
-                cont.push(ElementForm[i])
-            }
-        adaptContainer(cont)
+            ElementForm.style.display= 'flex'
+            ElementLogin.style.display= 'none'
+            btnRegister[0].style.display= 'flex'
+            btnRegister[1].style.display= 'none'
         }, 1000)
 
-    changePhrase(cont[0])
-    console.log(cont)
+    changePhrase('flex')
    }
 }
 
@@ -113,25 +105,69 @@ function changePhrase(condition){
     }
 }
 
-//adaptar os elementos de acordo com a quantidade de elementos
-function adaptContainer(Element){
-    const BoxRegister= document.querySelector('.Register')
-    const BoxCenter= document.querySelector('.form')
-    let SizeElement;
+//conexao com o banco de dados(envio dos dados do ususrio para cadastro)
 
-    for(let i=0; i <= Element.length; i++){
-        SizeElement= i
-    }
+function serverData(valuesData){
 
-    if(SizeElement == 4){
-        BoxRegister.style.gap= '.8vmax'
-        BoxCenter.style.gap= '1.3vmax'
-        BoxCenter.style.marginBottom= '3.5%'
-        BoxCenter.style.height= 'max-content'
-    }else{
-        BoxRegister.style.gap= ''
-        BoxCenter.style.gap= ''
-        BoxCenter.style.marginBottom= ''
-        BoxCenter.style.height= ''
+    console.log(valuesData)
+    $.ajax({
+        url: 'http://localhost/cad.php',
+        type: 'POST',
+        contentType: "application/json",
+        data: JSON.stringify(valuesData),
+        success: function(answer){
+            if(answer== 'sucess'){
+                localStorage.setItem('menssagem', 'enviado com sucesso')
+                window.location.href = 'index.html'
+            }
+        },
+        error: function (status, xhr, error){
+            console.log(error);
+        }
+    })
+}
+
+//função para verificação de dados
+function serverLogin(e){
+    const InputDataValue= [document.querySelector('.inputForename').value, document.querySelector('.ADDemail').value,document.querySelector('.EnterEmail').value,
+                           document.querySelector('.EnterPassword').value, document.querySelector('.createPassword').value, document.querySelector('.validPassword').value]
+    const TextInfor= document.querySelectorAll('.Text-infor')
+    let btnCall= e.className
+
+
+    const regexName = /^[A-Za-zÀ-ÿ\s]+$/;
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const regexPassword = /^.{6,}$/;
+
+    //validadções de imputs
+    //const EnterEmail= regexValues.test(InputDataValue[2].trim())
+    //const EnterPassword= regexValues.test(InputDataValue[3].trim())
+
+    switch(btnCall){
+        case 'button-answerOne':
+            const Forename = regexName.test(InputDataValue[0].trim());
+            const ADDemail = regexEmail.test(InputDataValue[1].trim());
+            const createPassword = regexPassword.test(InputDataValue[4].trim());
+            const validPassword = InputDataValue[4].trim() === InputDataValue[5].trim()
+            const arr=[]
+
+            if(Forename && ADDemail && createPassword && validPassword){
+                arr.push(InputDataValue[0], InputDataValue[1], InputDataValue[4])
+                serverData(arr)
+               }else{
+                    if(!Forename){
+                        TextInfor[0].style.display= 'flex'
+                    }
+                    if(!ADDemail){
+                        TextInfor[1].style.display= 'flex'
+                    }
+                    if(!createPassword){
+                        TextInfor[2].style.display= 'flex'
+                    }
+                    if(!validPassword){
+                        TextInfor[3].style.display= 'flex'
+                    }
+                }
+        default:
     }
 }

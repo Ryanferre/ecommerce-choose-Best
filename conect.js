@@ -1,3 +1,4 @@
+import * as indexbox from './index.js'
 
 function sellProduct(){
     //cada array de objetos representa uma categoria
@@ -75,6 +76,7 @@ function RequesitionProduct(){
 
     let reciveAnswer= new unitQuestion(container, valuedata)
 
+
     $.ajax({
         url: 'http://localhost/search.php',
         type: 'POST',
@@ -92,26 +94,21 @@ function RequesitionProduct(){
 
 /*mudar o arquivo css*/
 function ChangeStyle(PhatFile){
-    const currentFile= document.querySelector('#currentFile');
+    let currentFile= document.querySelector('#currentFile');
 
     const newElement= document.createElement('link');
-
+    if (!currentFile || !currentFile.parentNode) {
+        console.warn('Elemento com ID #currentFile não encontrado ou sem parentNode!');
+        return;
+      }    
           newElement.rel= 'stylesheet';
           newElement.href= PhatFile;
 
    currentFile.parentNode.replaceChild(newElement, currentFile)
+   console.log(currentFile)
 }
 
 //mudar o arquivo js
-function RepleceJs(getFile){
-    const Filejs= document.querySelector('#JsFile')
-
-    const newFilejs= document.createElement('script')
-
-          newFilejs.src= getFile
-
-    Filejs.parentNode.replaceChild(newFilejs, Filejs)
-}
 /*essa função funciona somente em mobile. ela faz uma requisição ao php para
 retirar o conteudo e montar o input de pesquisa junto com a barra de navegação.
 ela é chamada atravez do botão apresentado no menu-mobile(botão de pesquisa) */
@@ -144,11 +141,12 @@ function askPageform(){
         success: function(answer){
             $('body').html(answer);
             ChangeStyle('form.css');
-            FileVerifiqued.init()
         },
         error: function (status, xhr, error){
             console.log(error);
         }
     })
 }
+
+
 export {sellProduct, RequesitionProduct, askPageform, askPageForMobile}
