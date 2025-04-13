@@ -1,4 +1,4 @@
-import * as indexbox from './index.js'
+
 
 function sellProduct(){
     //cada array de objetos representa uma categoria

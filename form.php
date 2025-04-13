@@ -32,7 +32,7 @@ verifiquedmethod();
 function constructFor(){
     $html='
 <body>
- <script src="./Manipulation.js"></script>
+ <script type="module" src="./Manipulation.js"></script>
     <div class="container">
         <img class="imag-login" src="https://thumbs.dreamstime.com/b/web-246515641.jpg">
             <div class="Register">
@@ -59,7 +59,7 @@ function constructFor(){
                      <p class="Text-infor" >Por favor, adicione a mesma senha!</p>
                     </label>
                 </div>
-                    <button onclick="serverLogin(this)" class="button-answerOne">sing in</button>
+                    <button class="button-answerOne">sing in</button>
                 <div class="LoginIn">
                  <label class="EnterEmail-label">
                   <p class="Text-Input">Digite seu email.</p>
@@ -72,10 +72,10 @@ function constructFor(){
                   <p class="Text-infor">Senha invalida ou incorreta!</p>
                  </label>
                 </div>
-                <button onclick="serverLogin(this)" class="button-answerTwo">sing in</button>
+                <button class="button-answerTwo">sing in</button>
             </div>
         <div class="acept">
-            <button onclick="manipulationCadres()" class="button-direction">
+            <button class="button-direction">
               <div class="container-gear">
               <img class="imag-derection" src="icones/seta-direita.png">
               <img class="imag-gear1" src="icones/engrenagem.png">

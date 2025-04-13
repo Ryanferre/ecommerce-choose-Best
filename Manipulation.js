@@ -1,3 +1,35 @@
+
+//Funções para "burla" carregamento do htlm antes do js e capturar botões
+const btnRotation= setInterval(() => {
+    let btnRotationCall= document.querySelector('.button-direction')
+    if (btnRotationCall) {
+        btnRotationCall.addEventListener('click', () => {
+        manipulationCadres();
+      });
+      clearInterval(btnRotation);
+    }
+  }, 100);
+
+const btnEnswerOneTime= setInterval(()=>{
+    let btnEnswerOne= document.querySelector('.button-answerOne')
+    if (btnEnswerOne) {
+        btnEnswerOne.addEventListener('click', () => {
+       serverLogin('cadress')
+      });
+      clearInterval(btnEnswerOneTime);
+    }
+}, 100)
+
+const btnEnswerTwoTime= setInterval(()=>{
+    let btnEnswerTwo= document.querySelector('.button-answerTwo')
+    if (btnEnswerTwo) {
+        btnEnswerTwo.addEventListener('click', () => {
+        manipulationCadres();
+      });
+      clearInterval(btnEnswerTwoTime);
+    }
+}, 100)
+  
 function Movment(){
     let BoxSearch= document.querySelector('.Pesquisa')
     let BoxAconlt= document.querySelector('.Login')
@@ -12,7 +44,6 @@ function Movment(){
         BoxSearch.style.marginLeft= ''
     }
 }
-console.log('arquivo carregado')
 //troca de forma de cadastro
 function manipulationCadres() {
     const boxcontainer = document.querySelector('.Register');
@@ -105,20 +136,25 @@ function changePhrase(condition){
     }
 }
 
-//conexao com o banco de dados(envio dos dados do ususrio para cadastro)
-
+//conexao com o banco de dados(envio dos dados do usuario para cadastro)
 function serverData(valuesData){
-
     console.log(valuesData)
     $.ajax({
         url: 'http://localhost/cad.php',
         type: 'POST',
         contentType: "application/json",
         data: JSON.stringify(valuesData),
+        xhrFields: {
+            withCredentials: true
+        },
         success: function(answer){
             if(answer== 'sucess'){
-                localStorage.setItem('menssagem', 'enviado com sucesso')
-                window.location.href = 'index.html'
+                //estrategia de atraso para que o status seja formulado no back-end
+                setTimeout(()=>{
+                    window.location.href = 'index.html'
+                }, 1000)
+            }else{
+                console.log(answer)
             }
         },
         error: function (status, xhr, error){
@@ -132,7 +168,6 @@ function serverLogin(e){
     const InputDataValue= [document.querySelector('.inputForename').value, document.querySelector('.ADDemail').value,document.querySelector('.EnterEmail').value,
                            document.querySelector('.EnterPassword').value, document.querySelector('.createPassword').value, document.querySelector('.validPassword').value]
     const TextInfor= document.querySelectorAll('.Text-infor')
-    let btnCall= e.className
 
 
     const regexName = /^[A-Za-zÀ-ÿ\s]+$/;
@@ -143,8 +178,8 @@ function serverLogin(e){
     //const EnterEmail= regexValues.test(InputDataValue[2].trim())
     //const EnterPassword= regexValues.test(InputDataValue[3].trim())
 
-    switch(btnCall){
-        case 'button-answerOne':
+    switch(e){
+        case 'cadress':
             const Forename = regexName.test(InputDataValue[0].trim());
             const ADDemail = regexEmail.test(InputDataValue[1].trim());
             const createPassword = regexPassword.test(InputDataValue[4].trim());

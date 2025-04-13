@@ -2,7 +2,8 @@
 
 //função para manipular ou armazenar dados no banco de dados
 function acessSGBD(){
-    header("Access-Control-Allow-Origin: *"); // Permite requisições de qualquer origem
+    header("Access-Control-Allow-Origin: http://127.0.0.1:5500");
+    header("Access-Control-Allow-Credentials: true");
     header("Access-Control-Allow-Methods: POST, GET, OPTIONS"); // Permite os métodos HTTP necessários
     header("Access-Control-Allow-Headers: Content-Type"); // Permite o cabeçalho Content-Type
 
@@ -46,6 +47,8 @@ function acessSGBD(){
 
         public function executeQuery($query) {
             $this->conect->query($query);
+            session_start();
+            $_SESSION['cadastro_concluido']= true;
             echo 'sucess';
         }
     }
@@ -66,7 +69,5 @@ function acessSGBD(){
 
 
 }
-
-acessSGBD()
-
+acessSGBD();
 ?>

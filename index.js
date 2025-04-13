@@ -58,16 +58,24 @@ BtnForForm[0].addEventListener('click', (evt)=>{
 
 //fução de resposta ao usuario cadastrado e retirada dos botaoes na pagina principal
 function solving(){
-    //verificação periodica se foi feito login
-    const checkLogin = setInterval(() => {
-        let Mess = localStorage.getItem('menssagem');
-        console.log(Mess);
-        
-        if (Mess === 'enviado com sucesso') {
-            boxLoginAndSingUp.style.display = 'none';
-            clearInterval(checkLogin);
+    let buttonRegister= document.querySelector('.Box-Unit')
+    $.ajax({
+        url: 'http://localhost/status.php',
+        type: 'GET',
+        dataType: 'json',
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function (printanswer){
+            if(printanswer.cadUser){
+                buttonRegister.style.display= 'none'
+            }else{
+                console.warn(printanswer.cadUser)
+            }
+        },
+        error: function(status, xhr, error){
+            console.log(error)
         }
-    }, 100);
+    })
 }
-
-solving()
+ solving()
