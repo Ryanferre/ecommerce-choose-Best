@@ -59,6 +59,7 @@ BtnForForm[0].addEventListener('click', (evt)=>{
 //fução de resposta ao usuario cadastrado e retirada dos botaoes na pagina principal
 function solving(){
     let buttonRegister= document.querySelector('.Box-Unit')
+    const boxUnit= document.querySelector('.Unit')
     $.ajax({
         url: 'http://localhost/status.php',
         type: 'GET',
@@ -68,7 +69,13 @@ function solving(){
         },
         success: function (printanswer){
             if(printanswer.cadUser){
-                buttonRegister.style.display= 'none'
+                boxLoginAndSingUp.innerHTML= "<div><img width='50px' src='icones/person-icon-symbol-design-illustration-vector.png'/></div>"
+                boxLoginAndSingUp.style.width= 'max-content'
+                boxUnit.style.justifyContent= 'space-between'
+                buttonRegister.style.width= '23vmax'
+                buttonRegister.style.paddingRight= '2%'
+                buttonRegister.style.gap= '3%'
+
             }else{
                 console.warn(printanswer.cadUser)
             }
