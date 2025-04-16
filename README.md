@@ -1,35 +1,45 @@
-Este repositorio contém codigos-fonte de uma loja digital. O projeto ainda esta em fase de desenvolvimento. O intuito é fazer uma simulação
-de um sistema de busca em um base de dados ultilizando localstorange(por enquanto) e PHP para tornar a pagina mais dinamica.
+# Projeto Loja Digital
 
-ATENÇAO: ESSE PROJETO É UM DESAFIO PESSOAL NO QUAL COLOCO EM PRATICA MINHAS HABILIDADES. ALÉM DISSO, É UMA FORMA DE BUSCAR CONHECIMENTO ATRAVEZ DE UM DESAFIO FOCADO EM LINGUAGENS COMO PHP, MYSQL E JS; BUSCANDO ENTENDER COMO CADA UMA DELAS PODEM TRABALHAR TANTO NO LADO DO SERVIDOR COMO NO LADO DO CLIENTE, RECEBENDO DADOS VIA API E APRESENTANDO-OS NO NAVEGADOR.
+Este repositório contém o código-fonte de uma loja digital.  
+O projeto ainda está em fase de desenvolvimento.
 
-RESOLUÇÃO DE PROBLEMAS
+O objetivo é simular um sistema de busca em uma base de dados, utilizando `localStorage` (por enquanto) e PHP para tornar a página mais dinâmica.
 
-BACK-END
+---
 
-- Ativação de acesso CORS
+## 🚀 Objetivo
 
-- Construção de html dinamicos de acordo com requisições POST
+Este projeto é um **desafio pessoal** no qual coloco em prática minhas habilidades em:
 
-- Conexão com banco de dados e construção de query's MYSQL
+- PHP
+- MySQL
+- JavaScript
 
-- Status cokee's durante conexaõ do usuario ao servidor
+A ideia é entender como essas tecnologias trabalham juntas, tanto no lado do servidor quanto no cliente, manipulando dados via API e exibindo informações no navegador.
 
-- Manipulação de dados enviado do localStorange pelo front via requisição POST
+---
 
+## 🧩 Funcionalidades
 
-FRONT-END
+### Back-End (PHP / MySQL)
 
-- Importação de funções
+- Configuração de CORS
+- Criação de HTML dinâmico com base em requisições POST
+- Conexão com banco de dados e construção de queries MySQL
+- Gerenciamento de cookies de sessão do usuário
+- Manipulação de dados enviados do `localStorage` via POST
 
-- Requisição e consulmo de api via AJAX
+### Front-End (JavaScript)
 
-- Armazenamanto e reculperação de dados no localStorange
+- Importação e organização de funções
+- Requisição e consumo de API com AJAX
+- Armazenamento e recuperação de dados usando `localStorage`
+- Manipulação de eventos e do DOM
+- Validação de dados do usuário usando Regex
+- Comunicação entre arquivos JavaScript
 
-- Manipulação de eventos
+---
 
-- Manipulaçao do DOM
+## ⚠️ Aviso
 
-- Validação de dados do usuario ultilizado regex
-
-- Comuinicação entre arquivos
+Este projeto está em desenvolvimento e tem como principal finalidade o aprendizado.
