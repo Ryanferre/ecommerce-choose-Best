@@ -149,15 +149,12 @@ function serverData(valuesData){
         },
         success: function(answer){
             if(answer== 'sucess'){
-                //estrategia de atraso para que o status seja formulado no back-end
-                setTimeout(()=>{
                     window.location.href = 'index.html'
-                }, 1000)
             }else{
                 console.log(answer)
             }
         },
-        error: function (status, xhr, error){
+        error: function (error){
             console.log(error);
         }
     })
@@ -173,10 +170,6 @@ function serverLogin(e){
     const regexName = /^[A-Za-zÀ-ÿ\s]+$/;
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const regexPassword = /^.{6,}$/;
-
-    //validadções de imputs
-    //const EnterEmail= regexValues.test(InputDataValue[2].trim())
-    //const EnterPassword= regexValues.test(InputDataValue[3].trim())
 
     switch(e){
         case 'cadress':

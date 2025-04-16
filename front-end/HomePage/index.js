@@ -1,4 +1,4 @@
-import * as FileRequisition from './conect.js';
+import * as FileRequisition from '../conect.js';
 
 FileRequisition.sellProduct()
 
@@ -69,7 +69,7 @@ function solving(){
         },
         success: function (printanswer){
             if(printanswer.cadUser){
-                boxLoginAndSingUp.innerHTML= "<div><img width='50px' src='icones/person-icon-symbol-design-illustration-vector.png'/></div>"
+                boxLoginAndSingUp.innerHTML= "<div><a href='#'><img width='50px' src='icones/person-icon-symbol-design-illustration-vector.png'/></a></div>"
                 boxLoginAndSingUp.style.width= 'max-content'
                 boxUnit.style.justifyContent= 'space-between'
                 buttonRegister.style.width= '23vmax'
@@ -85,4 +85,4 @@ function solving(){
         }
     })
 }
- solving()
+solving()

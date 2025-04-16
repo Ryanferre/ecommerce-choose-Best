@@ -31,3 +31,5 @@ FRONT-END
 - Manipulaçao do DOM
 
 - Validação de dados do usuario ultilizado regex
+
+- Comuinicação entre arquivos

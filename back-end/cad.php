@@ -41,7 +41,7 @@ function acessSGBD(){
         public function conectionBD(){
             $this->conect= new mysqli($this->Location, $this->Usuario, $this->Password, $this->SGBD);
             if($this->conect->connect_error){
-                die("Erro na conexao");
+                die("Erro de conexao");
             }
         }
 

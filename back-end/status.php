@@ -10,7 +10,6 @@ function Notfyacess(){
     $ress = ['cadUser' => false];
     if(isset($_SESSION['cadastro_concluido'])== true){
         $ress['cadUser']= true;
-        unset($_SESSION['cadastro_concluido']);
         echo json_encode($ress);
     }else{
         echo json_encode($ress);
