@@ -140,7 +140,7 @@ function changePhrase(condition){
 function serverData(valuesData){
     console.log(valuesData)
     $.ajax({
-        url: 'http://localhost/cad.php',
+        url: 'http://localhost/back-end/cad.php',
         type: 'POST',
         contentType: "application/json",
         data: JSON.stringify(valuesData),

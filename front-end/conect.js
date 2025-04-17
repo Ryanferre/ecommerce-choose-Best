@@ -78,7 +78,7 @@ function RequesitionProduct(){
 
 
     $.ajax({
-        url: 'http://localhost/search.php',
+        url: 'http://localhost/back-end/search.php',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(reciveAnswer),
@@ -116,7 +116,7 @@ ela é chamada atravez do botão apresentado no menu-mobile(botão de pesquisa) 
 function askPageForMobile(){
     let Body;
     $.ajax({
-        url: 'http://localhost/formsearch.php',
+        url: 'http://localhost/back-end/formsearch.php',
         type: 'POST',
         data: {action: 'RequisitionConstruct'},
         success: function (printanswer){
@@ -135,7 +135,7 @@ function askPageForMobile(){
 //função para fazer uma requisição de uma pagina de cadastro
 function askPageform(){
     $.ajax({
-        url: 'http://localhost/form.php',
+        url: 'http://localhost/back-end/form.php',
         type: 'POST',
         data: {action: 'Module-body-form'},
         success: function(answer){

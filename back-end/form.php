@@ -1,5 +1,5 @@
 <?php
-header("Access-Control-Allow-Origin: *"); // Permite requisições de qualquer origem
+header("Access-Control-Allow-Origin: http://127.0.0.1:5500"); // Permite requisições de qualquer origem
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS"); // Permite os métodos HTTP necessários
 header("Access-Control-Allow-Headers: Content-Type"); // Permite o cabeçalho Content-Type
 
@@ -77,9 +77,9 @@ function constructFor(){
         <div class="acept">
             <button class="button-direction">
               <div class="container-gear">
-              <img class="imag-derection" src="icones/seta-direita.png">
-              <img class="imag-gear1" src="icones/engrenagem.png">
-              <img class="imag-gear2" src="icones/engrenagem.png">
+              <img class="imag-derection" src="http://localhost/back-end/icones/seta-direita.png">
+              <img class="imag-gear1" src="http://localhost/back-end/icones/engrenagem.png">
+              <img class="imag-gear2" src="http://localhost/back-end/icones/engrenagem.png">
               <div class="box-after"></div></div><p id="Text-direct">sing in</p>
             </button>
         </div>

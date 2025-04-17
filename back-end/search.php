@@ -1,6 +1,6 @@
 <?php
 
-header("Access-Control-Allow-Origin: *"); // Permite requisições de qualquer origem
+header("Access-Control-Allow-Origin: http://127.0.0.1:5500"); // Permite requisições de qualquer origem
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS"); // Permite os métodos HTTP necessários
 header("Access-Control-Allow-Headers: Content-Type"); // Permite o cabeçalho Content-Type
 
@@ -79,7 +79,7 @@ function Construct(){
                                 <li class="items">
                                     <div class="UnitDescription">
                                         <p class"mark">' . htmlspecialchars($mark, ENT_QUOTES, 'UTF-8') . '</p>
-                                        <img class="ProductImag" src="' . htmlspecialchars($imag, ENT_QUOTES, 'UTF-8') . '">
+                                        <img class="ProductImag" src="http://localhost/back-end/' . htmlspecialchars($imag, ENT_QUOTES, 'UTF-8') . '">
                                         <h3>' . htmlspecialchars($product, ENT_QUOTES, 'UTF-8') . '</h3>
                                         <p>' . htmlspecialchars($description, ENT_QUOTES, 'UTF-8') . '</p>
                                     </div>
@@ -118,7 +118,7 @@ function Construct(){
                                 <li class="items">
                                     <div class="UnitDescription">
                                         <p class"mark">' . htmlspecialchars($mark, ENT_QUOTES, 'UTF-8') . '</p>
-                                        <img class="ProductImag" src="' . htmlspecialchars($imag, ENT_QUOTES, 'UTF-8') . '">
+                                        <img class="ProductImag" src="http://localhost/back-end/' . htmlspecialchars($imag, ENT_QUOTES, 'UTF-8') . '">
                                         <h3>' . htmlspecialchars($product, ENT_QUOTES, 'UTF-8') . '</h3>
                                         <p>' . htmlspecialchars($description, ENT_QUOTES, 'UTF-8') . '</p>
                                     </div>
@@ -156,7 +156,7 @@ function Construct(){
                                 <li class="items">
                                     <div class="UnitDescription">
                                         <p class"mark">' . htmlspecialchars($mark, ENT_QUOTES, 'UTF-8') . '</p>
-                                        <img class="ProductImag" src="' . htmlspecialchars($imag, ENT_QUOTES, 'UTF-8') . '">
+                                        <img class="ProductImag" src="http://localhost/back-end/' . htmlspecialchars($imag, ENT_QUOTES, 'UTF-8') . '">
                                         <h3>' . htmlspecialchars($product, ENT_QUOTES, 'UTF-8') . '</h3>
                                         <p>' . htmlspecialchars($description, ENT_QUOTES, 'UTF-8') . '</p>
                                     </div>
@@ -188,15 +188,15 @@ function RequisitionConstruct(){
         
         <div class="Pesquisa-mobile">
                 <input class="TextProdu" type="text">
-                <button class="elementestwo-mobile"><img class="Iconlup" src="icones/LupaPesquisa.png"></button>
+                <button class="elementestwo-mobile"><img class="Iconlup" src="http://localhost/back-end/icones/LupaPesquisa.png"></button>
         </div>
         
         <div class="menu-mobile">
         <ul class="listNav">
-            <li><button class="buttonHome"><img class="iconNavegation" src="icones/botao-home.png"></button></li>
-            <li><button class="buttonLupa"><img class="iconNavegation" src="icones/LupaPesquisa.png"></button></li>
-            <li><button class="buttonLogin"><img class="iconNavegation" src="icones/contorno-do-botao-de-seta-quadrado-de-login.png"></li>
-            <li><button class="buttonRegister"><img class="iconNavegation" src="icones/icons8-sign-up-50.png"></button></li>
+            <li><button class="buttonHome"><img class="iconNavegation" src="http://localhost/back-end/icones/botao-home.png"></button></li>
+            <li><button class="buttonLupa"><img class="iconNavegation" src="http://localhost/back-end/icones/LupaPesquisa.png"></button></li>
+            <li><button class="buttonLogin"><img class="iconNavegation" src="http://localhost/back-end/icones/contorno-do-botao-de-seta-quadrado-de-login.png"></li>
+            <li><button class="buttonRegister"><img class="iconNavegation" src="http://localhost/back-end/icones/icons8-sign-up-50.png"></button></li>
         </ul>
         </div>
         </body>';

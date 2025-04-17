@@ -61,7 +61,7 @@ function solving(){
     let buttonRegister= document.querySelector('.Box-Unit')
     const boxUnit= document.querySelector('.Unit')
     $.ajax({
-        url: 'http://localhost/status.php',
+        url: 'http://localhost/back-end/status.php',
         type: 'GET',
         dataType: 'json',
         xhrFields: {
