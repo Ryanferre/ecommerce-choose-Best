@@ -32,7 +32,7 @@ verifiquedmethod();
 function constructFor(){
     $html='
 <body>
- <script type="module" src="./Manipulation.js"></script>
+ <script type="module" src="/front-end/Manipulation.js"></script>
     <div class="container">
         <img class="imag-login" src="https://thumbs.dreamstime.com/b/web-246515641.jpg">
             <div class="Register">

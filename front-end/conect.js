@@ -84,7 +84,7 @@ function RequesitionProduct(){
         data: JSON.stringify(reciveAnswer),
         success: function(answer){
             $('body').html(answer)
-            ChangeStyle('search.css')
+            ChangeStyle('http://localhost/front-end/search.css')
         },
         error: function(xhr, status, error){
             console.log(error)
@@ -140,7 +140,7 @@ function askPageform(){
         data: {action: 'Module-body-form'},
         success: function(answer){
             $('body').html(answer);
-            ChangeStyle('form.css');
+            ChangeStyle('http://localhost/front-end/form.css');
         },
         error: function (status, xhr, error){
             console.log(error);

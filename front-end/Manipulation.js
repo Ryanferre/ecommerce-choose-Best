@@ -179,23 +179,27 @@ function serverLogin(e){
             const validPassword = InputDataValue[4].trim() === InputDataValue[5].trim()
             const arr=[]
 
-            if(Forename && ADDemail && createPassword && validPassword){
+            if(Forename && ADDemail && createPassword && validPassword){//se os dados estiverem correto, transfira para o array
                 arr.push(InputDataValue[0], InputDataValue[1], InputDataValue[4])
-                serverData(arr)
-               }else{
-                    if(!Forename){
+                serverData(arr)//transfira o array para a funcao de conexao ao servidor
+               }else{//caso contrario, identifique quem esta errado
+                    arr.push(ADDemail, createPassword, validPassword)
+
+                    if(arr[0]==false){
                         TextInfor[0].style.display= 'flex'
+                        console.log(InputDataValue[1])
                     }
-                    if(!ADDemail){
+
+                    if(arr[1]==false){
                         TextInfor[1].style.display= 'flex'
                     }
-                    if(!createPassword){
+
+                    if(arr[2]==false){
                         TextInfor[2].style.display= 'flex'
                     }
-                    if(!validPassword){
-                        TextInfor[3].style.display= 'flex'
-                    }
+
+                    console.log(arr)
                 }
-        default:
+        break;
     }
 }
