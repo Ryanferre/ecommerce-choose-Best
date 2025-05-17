@@ -85,6 +85,7 @@ function RequesitionProduct(){
         success: function(answer){
             $('body').html(answer)
             ChangeStyle('http://localhost/front-end/search.css')
+            console.log(answer)
         },
         error: function(xhr, status, error){
             console.log(error)

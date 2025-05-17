@@ -1,3 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .imgUser{
     width: 10vmax;
+}
+.CopGrid{
+    box-shadow: 1px 1px 5px rgb(123, 123, 123);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    height: 18vmax;
+}
+.unit{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+.unitInfor{
+    height: 8vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.btn-exit{
+    width: 10vmax;
+    height: 2vmax;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: rgb(42, 195, 255);
+    color: white;
+    transition: .2s;
+    cursor: pointer;
+}
+label{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+input{
+    border: none;
+    outline: none;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+p{
+    margin: 0;
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-size: clamp(1rem, 1vmax, 1rem);
+}
+h1{
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-size: clamp(1.1rem, 2.5vmax, 1.4rem);
 }

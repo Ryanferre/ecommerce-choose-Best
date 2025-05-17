@@ -24,7 +24,8 @@ const btnEnswerTwoTime= setInterval(()=>{
     let btnEnswerTwo= document.querySelector('.button-answerTwo')
     if (btnEnswerTwo) {
         btnEnswerTwo.addEventListener('click', () => {
-        manipulationCadres();
+        serverLogin('Login')
+        console.log('chamou')
       });
       clearInterval(btnEnswerTwoTime);
     }
@@ -201,5 +202,15 @@ function serverLogin(e){
                     console.log(arr)
                 }
         break;
+        case 'Login':
+            const TestEmail= regexEmail.test(InputDataValue[2].trim())
+            const TestPass= regexPassword.test(InputDataValue[3].trim())
+            const arrlogin=[]
+            if(TestEmail && TestPass){
+                arrlogin.push(InputDataValue[0], InputDataValue[2], InputDataValue[3])
+                serverData(arrlogin)
+            }else{
+                console.log(arrlogin)
+            }
     }
 }

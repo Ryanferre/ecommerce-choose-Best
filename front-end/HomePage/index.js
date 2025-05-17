@@ -55,8 +55,11 @@ if (BtnForForm.length > 0) {
 BtnForForm[0].addEventListener('click', (evt)=>{
     FileRequisition.askPageform()
 })
+BtnForForm[1].addEventListener('click', (evt)=>{
+    FileRequisition.askPageform()
+})
 
-//fução de resposta ao usuario cadastrado e retirada dos botaoes na pagina principal
+//fução função para verificar se exsite alguma seção no php
 function solving(){
     let buttonRegister= document.querySelector('.Box-Unit')
     const boxUnit= document.querySelector('.Unit')
@@ -65,11 +68,13 @@ function solving(){
         type: 'GET',
         dataType: 'json',
         xhrFields: {
-            withCredentials: true
+            withCredentials: 'include'
         },
         success: function (printanswer){
-            if(printanswer.cadUser){
-                boxLoginAndSingUp.innerHTML= "<div><a href='#'><img width='50px' src='icones/person-icon-symbol-design-illustration-vector.png'/></a></div>"
+
+            console.log(printanswer)//esse e o console que mostrei
+            if(printanswer.SessionRes){
+                boxLoginAndSingUp.innerHTML= "<div><a href='/front-end/UserData/User.html'><img width='50px' src='http://localhost/back-end/icones/person.png'/></a></div>"
                 boxLoginAndSingUp.style.width= 'max-content'
                 boxUnit.style.justifyContent= 'space-between'
                 buttonRegister.style.width= '23vmax'
@@ -77,11 +82,11 @@ function solving(){
                 buttonRegister.style.gap= '3%'
 
             }else{
-                console.warn(printanswer.cadUser)
+                console.warn(printanswer)
             }
         },
         error: function(status, xhr, error){
-            console.log(error)
+            console.log(xhr.responseText)
         }
     })
 }

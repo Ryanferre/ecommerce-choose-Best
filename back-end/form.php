@@ -72,7 +72,7 @@ function constructFor(){
                   <p class="Text-infor">Senha invalida ou incorreta!</p>
                  </label>
                 </div>
-                <button class="button-answerTwo">sing in</button>
+                <button class="button-answerTwo">Login</button>
             </div>
         <div class="acept">
             <button class="button-direction">
